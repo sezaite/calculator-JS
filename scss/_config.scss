@@ -1,0 +1,15 @@
+$primary-color: rgb(182, 169, 169);
+$secondary-color: rgb(197, 91, 49);
+$tertiary-color: rgb(189, 24, 18);
+$quaternary-color: rgb(0, 0, 0);
+$input-color: #ffffff;
+$hover-color: rgb(183, 100, 185);
+$main-font: "Lucida Console", Monaco, monospace;
+
+@function set_text_color($color) {
+  @if (lightness($color) > 70) {
+    @return #333;
+  } @else {
+    @return #fff;
+  }
+}

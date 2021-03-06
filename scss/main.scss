@@ -1,0 +1,124 @@
+@import "config";
+
+*,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  font-family: $main-font;
+  font-size: 20px;
+  line-height: 20px;
+  color: rgb(0, 0, 0);
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  padding-top: 1px;
+  background: url("../this.jpg");
+  background-size: cover;
+}
+
+button {
+  font-family: $main-font;
+  border: none;
+  font-size: 1.5em;
+  color: $primary-color;
+  &:focus {
+    outline: none;
+  }
+  &.mouse-enter {
+    cursor: pointer;
+    transform: scale(0.96);
+    transition: transform 0.4s, color 0.3s;
+    color: white;
+  }
+}
+
+#calc {
+  margin: 30px auto;
+  border-radius: 5px;
+  height: 400px;
+  width: 500px;
+  background-color: $primary-color;
+  display: grid;
+  grid-gap: 3px;
+  grid-template-columns: repeat(1fr, 6);
+  grid-template-rows: 70px auto;
+  grid-template-areas:
+    "i i i i i i"
+    "n n n o m m";
+
+  > * {
+    margin: 12px;
+  }
+
+  #input {
+    grid-area: i;
+    background-color: $input-color;
+    box-shadow: 0px 0px 52px 4px rgba(48, 10, 10, 0.77);
+  }
+
+  #numbers {
+    grid-area: n;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+
+    > button {
+      background-color: $quaternary-color;
+      font-family: $main-font;
+      border: none;
+      padding: 0;
+
+      &:active {
+        color: $tertiary-color;
+      }
+    }
+  }
+
+  #operations {
+    grid-area: o;
+    display: flex;
+    flex-direction: column;
+
+    > button {
+      height: 100%;
+      margin-top: 5px;
+      background: $secondary-color;
+      font-family: $main-font;
+
+      &:active {
+        color: $tertiary-color;
+      }
+    }
+    #add {
+      margin-top: 0;
+    }
+  }
+
+  #manage {
+    grid-area: m;
+    display: flex;
+    flex-direction: column;
+
+    > button {
+      height: 100%;
+      margin-top: 5px;
+      background-color: $tertiary-color;
+      font-family: $main-font;
+
+      &:active {
+        color: rgba(48, 10, 10, 0.77);
+      }
+    }
+    #clear {
+      margin-top: 0px;
+    }
+  }
+}
