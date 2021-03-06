@@ -79,7 +79,6 @@ function clearAll() {
 }
 
 backspace.addEventListener("click", deleteLast);
-//paTAISYTI KAD IKSA GALETUM SPAUSTI KELIS KARTUS NX
 function deleteLast() {
   let deletePrev = Array.from(`${previousNumber}`);
   if (previousNumber === undefined && currentNumber.length === 0) {
