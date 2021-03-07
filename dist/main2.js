@@ -103,7 +103,6 @@ function deleteLast() {
   }
 }
 
-//When user clicks on a number and updates currentNumber
 numbers.forEach((number) => {
   number.addEventListener("click", getNumber);
 });
@@ -156,7 +155,7 @@ function manageFloats() {
 function updateCurrentScreen() {
   current.textContent = currentNumber.join("");
 }
-//when user clicks on operator:
+
 operators.forEach((operator) => {
   operator.addEventListener("click", veryFirstRound);
 });
